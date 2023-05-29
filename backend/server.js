@@ -1,18 +1,25 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const connectDB = require("./config/db");
+const userRoute = require("./routes/userRoutes");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+dotenv.config();
+
+// connection db
+connectDB();
 
 const app = express();
-dotenv.config();
+
+app.use(express.json());
+
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("chat api");
-});
+app.use("/api/user", userRoute);
 
-app.get("/api/chats", (req, res) => {
-  res.send("all chats here");
-});
+// Error Handling middlewares
+app.use(notFound);
+app.use(errorHandler);
 
 const port = process.env.PORT || 5000;
 
