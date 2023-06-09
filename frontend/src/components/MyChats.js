@@ -24,7 +24,6 @@ const MyChats = ({fetchAgain}) => {
       };
 
       const { data } = await axios.get("/api/chat", config);
-      console.log(data);
       setChats(data);
     } catch (error) {
       toast({
@@ -44,7 +43,7 @@ const MyChats = ({fetchAgain}) => {
     // eslint-disable-next-line
   }, [fetchAgain]);
 
-  console.log(chats);
+  // console.log(chats);
 
   return (
     <Box
