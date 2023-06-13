@@ -151,6 +151,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       ) {
         if (!notification.includes(newMessageRecieved)) {
           setNotification([newMessageRecieved, ...notification]);
+
           setFetchAgain(!fetchAgain);
         }
       } else {
@@ -158,7 +159,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       }
     });
   });
-
   return (
     <>
       {selectedChat ? (

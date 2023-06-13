@@ -10,14 +10,14 @@ const ChatProvider = ({ children }) => {
   const [notification, setNotification] = useState([]);
   const [chats, setChats] = useState();
   const navigate = useNavigate();
-  // const history = useHistory();
 
   useEffect(() => {
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    const userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
     setUser(userInfo);
 
-    // if (!userInfo) history.push("/");
-    if (!userInfo){ navigate("/");}
+    if (!userInfo) {
+      navigate("/");
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -110,7 +110,7 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
-      localStorage.setItem("userInfo", JSON.stringify(data));
+      sessionStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
       navigate("/chats");
     } catch (error) {
