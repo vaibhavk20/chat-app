@@ -19,7 +19,7 @@ import ScrollableChat from "./ScrollableChat";
 import io from "socket.io-client";
 import TypingAnimation from "../animation/TypeingAnimation";
 // it change after deployment of backend
-const ENDPOINT = "http://localhost:8080";
+const ENDPOINT = "https://vchat.up.railway.app/";
 let socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
